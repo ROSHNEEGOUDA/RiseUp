@@ -37,7 +37,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("https://localhost:3000/api/v1/users/userDetail", {
+        const response = await axios.get("https://rise-up-backend.vercel.app/api/v1/users/userDetail", {
           headers: { "Content-Type": "application/json" },
           withCredentials: true 
         });
