@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BACKEND_URL = "https://rise-up-backend.vercel.app";
+const BACKEND_URL = "https://rise-up-backend.vercel.app"; 
 
 
 const LoginRegister = ({ onLoginSuccess }) => {
@@ -34,10 +34,10 @@ const LoginRegister = ({ onLoginSuccess }) => {
         userData,
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true,
+          withCredentials: true, 
         }
       );
-
+      
 
       if (response.status === 201 || response.status === 200) {
         toast.success("Registration successful!");
@@ -69,7 +69,6 @@ const LoginRegister = ({ onLoginSuccess }) => {
           withCredentials: true, // 👈 important
         }
       );
-      ;
 
       if (response.status === 200) {
         toast.success("Login successful!");
@@ -93,7 +92,7 @@ const LoginRegister = ({ onLoginSuccess }) => {
           {isRegister ? "Register" : "Login"}
         </h2>
         {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
-
+        
         <form onSubmit={isRegister ? handleRegister : handleLogin}>
           {isRegister && (
             <div className="mb-4">
