@@ -14,6 +14,7 @@ app.use(cors({
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true, // Allow cookies if needed
 }));
+app.options('*', cors()); // Enable pre-flight across-the-board
 
 app.use(cookieParser());
 
