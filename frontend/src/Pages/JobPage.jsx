@@ -25,7 +25,7 @@ const JobSeekerPage = () => {
     const fetchUserData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/users/userDetail", {
+        const response = await axios.get("https://localhost:3000/api/v1/users/userDetail", {
           headers: { "Content-Type": "application/json" },
           withCredentials: true
         });

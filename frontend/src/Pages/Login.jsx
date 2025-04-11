@@ -27,7 +27,7 @@ const LoginRegister = ({ onLoginSuccess }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/users/register",
+        "https://localhost:3000/api/v1/users/register",
         userData,
         { headers: { "Content-Type": "application/json" }, withCredentials: true }
       );
@@ -55,7 +55,7 @@ const LoginRegister = ({ onLoginSuccess }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/users/login",
+        "https://localhost:3000/api/v1/users/login",
         loginData,
         { headers: { "Content-Type": "application/json" }, withCredentials: true }
       );
