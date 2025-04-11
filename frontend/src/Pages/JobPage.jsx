@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Search, Briefcase, Filter, MapPin, Calendar, ChevronRight } from "lucide-react";
 
-const BACKEND_URL = "https://rise-up-backend.vercel.app";
+const BACKEND_URL = "https://riseup-production.up.railway.app";
 
 const JobSeekerPage = () => {
   const [jobs, setJobs] = useState([]);

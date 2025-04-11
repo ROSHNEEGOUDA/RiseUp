@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BACKEND_URL = "https://rise-up-backend.vercel.app"; 
+const BACKEND_URL = "https://riseup-production.up.railway.app"; 
 
 
 const LoginRegister = ({ onLoginSuccess }) => {
