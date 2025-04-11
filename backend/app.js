@@ -5,7 +5,7 @@ import cors from "cors";
 const app = express();
 
 // ✅ Increase payload size limit
-app.use(express.json({ limit: "50mb" })); 
+app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 app.use(cors({
@@ -15,22 +15,14 @@ app.use(cors({
     credentials: true,
 }));
 
-app.options('*', cors()); 
-
-
+app.options('*', cors());
 app.use(cookieParser());
 
+// Routers
 import userRouter from './routes/user.routes.js';
+import recruiterRouter from './routes/recruiter.routes.js';
+
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/recruiters", recruiterRouter);
 
-import recruiterRouter from './routes/recruiter.routes.js'
-
-
-// middleare for using the route and passing control to the controller 
-
-app.use("/api/v1/users",userRouter)
-app.use("/api/v1/recruiters",recruiterRouter)
-
-
-
-export { app }
+export { app };
