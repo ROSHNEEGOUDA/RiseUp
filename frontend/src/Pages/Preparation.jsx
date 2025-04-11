@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 import Sidebar from '../Components/Sidebar';
 import axios from 'axios';
 
+const BACKEND_URL = "https://rise-up-backend.vercel.app";
+
 const getDomain = (url) => {
   try {
     const { hostname } = new URL(url);
@@ -60,7 +62,7 @@ const Preparation = () => {
     const fetchUserData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("https://rise-up-backend.vercel.app/api/v1/users/userDetail", {
+        const response = await axios.get(`${BACKEND_URL}/api/v1/users/userDetail`, {
           headers: { "Content-Type": "application/json" },
           withCredentials: true
         });

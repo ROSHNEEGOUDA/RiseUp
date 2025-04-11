@@ -3,6 +3,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Search, Briefcase, Filter, MapPin, Calendar, ChevronRight } from "lucide-react";
 
+const BACKEND_URL = "https://rise-up-backend.vercel.app";
+
 const JobSeekerPage = () => {
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
@@ -25,7 +27,7 @@ const JobSeekerPage = () => {
     const fetchUserData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("https://rise-up-backend.vercel.app/api/v1/users/userDetail", {
+        const response = await axios.get(`${BACKEND_URL}/api/v1/users/userDetail`, {
           headers: { "Content-Type": "application/json" },
           withCredentials: true
         });

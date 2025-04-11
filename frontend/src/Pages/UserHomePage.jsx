@@ -9,6 +9,8 @@ import ChatbotComponent from "./Chatbot";
 import ChatBot from "react-chatbotify";
 import SehpaathiBot from "./Chatbot";
 
+const BACKEND_URL = "https://rise-up-backend.vercel.app";
+
 // Interview card data - now used for sidebar navigation
 const navItems = [
     {
@@ -199,7 +201,7 @@ const HomePage = () => {
         const fetchUserData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get("https://rise-up-backend.vercel.app/api/v1/users/userDetail", {
+                const response = await axios.get(`${BACKEND_URL}/api/v1/users/userDetail`, {
                     headers: { "Content-Type": "application/json" },
                     withCredentials: true
                 });
@@ -240,7 +242,7 @@ const HomePage = () => {
     // Logout function
     const handleLogout = async () => {
         try {
-            await axios.get("https://rise-up-backend.vercel.app/api/v1/users/logout", {
+            await axios.get(`${BACKEND_URL}/api/v1/users/logout`, {
                 withCredentials: true
             });
 

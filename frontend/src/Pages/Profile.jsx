@@ -21,6 +21,8 @@ import {
   XMarkIcon
 } from '@heroicons/react/24/outline';
 
+const BACKEND_URL = "https://rise-up-backend.vercel.app";
+
 const UserProfile = () => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
@@ -34,10 +36,12 @@ const UserProfile = () => {
   
   const profileMenuRef = useRef(null);
 
+
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("https://rise-up-backend.vercel.app/api/v1/users/userDetail", {
+        const response = await axios.get(`${BACKEND_URL}/api/v1/users/userDetail`, {
           headers: { "Content-Type": "application/json" },
           withCredentials: true 
         });

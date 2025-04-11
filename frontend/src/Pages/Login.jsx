@@ -4,6 +4,9 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const BACKEND_URL = "https://rise-up-backend.vercel.app";
+
+
 const LoginRegister = ({ onLoginSuccess }) => {
   const [isRegister, setIsRegister] = useState(false);
   const [email, setEmail] = useState("");
@@ -27,10 +30,14 @@ const LoginRegister = ({ onLoginSuccess }) => {
 
     try {
       const response = await axios.post(
-        "https://rise-up-backend.vercel.app/api/v1/users/register",
+        `${BACKEND_URL}/api/v1/users/register`,
         userData,
-        { headers: { "Content-Type": "application/json" }, withCredentials: true }
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
       );
+
 
       if (response.status === 201 || response.status === 200) {
         toast.success("Registration successful!");
@@ -55,10 +62,14 @@ const LoginRegister = ({ onLoginSuccess }) => {
 
     try {
       const response = await axios.post(
-        "https://rise-up-backend.vercel.app/api/v1/users/login",
+        `${BACKEND_URL}/api/v1/users/login`,
         loginData,
-        { headers: { "Content-Type": "application/json" }, withCredentials: true }
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true, // 👈 important
+        }
       );
+      ;
 
       if (response.status === 200) {
         toast.success("Login successful!");
@@ -82,7 +93,7 @@ const LoginRegister = ({ onLoginSuccess }) => {
           {isRegister ? "Register" : "Login"}
         </h2>
         {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
-        
+
         <form onSubmit={isRegister ? handleRegister : handleLogin}>
           {isRegister && (
             <div className="mb-4">
