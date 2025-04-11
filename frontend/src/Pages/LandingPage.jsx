@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { motion } from 'react-motion';
+import { motion } from "framer-motion";
 
 const App = () => {
     const canvasRef = useRef(null);
