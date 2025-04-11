@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@googleapis/youtube": "^24.0.0",
+    "axios": "^1.8.4",
+    "cheerio": "^1.0.0",
+    "google-it": "^1.6.4",
+    "google-search-results-nodejs": "^2.1.0",
+    "googleapis": "^148.0.0",
+    "youtube-search": "^1.1.6",
+    "youtube-search-without-api-key": "^2.0.1"
+  }
+}
