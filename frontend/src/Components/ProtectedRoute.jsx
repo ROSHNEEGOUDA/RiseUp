@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const BACKEND_URL = "https://riseup-pwmj.onrender.com"; // Replace with your backend URL
+
 const ProtectedRoute = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(null);
     const navigate = useNavigate();
@@ -10,7 +12,7 @@ const ProtectedRoute = ({ children }) => {
         const checkAuth = async () => {
             try {
                 // Fetch user details using the token from cookies
-                await axios.get("http://localhost:3000/api/v1/users/userDetail", {
+                await axios.get(`${BACKEND_URL}/api/v1/users/userDetail`, {
                     withCredentials: true, // Sends cookies with the request
                     headers: {
                         "Content-Type": "application/json"
