@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import Sidebar from '../Components/Sidebar';
 import axios from 'axios';
 
-const BACKEND_URL = "https://riseup-production.up.railway.app";
+const BACKEND_URL = "https://riseup-pwmj.onrender.com";
 
 const getDomain = (url) => {
   try {

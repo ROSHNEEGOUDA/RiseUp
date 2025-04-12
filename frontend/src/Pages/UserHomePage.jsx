@@ -9,7 +9,7 @@ import ChatbotComponent from "./Chatbot";
 import ChatBot from "react-chatbotify";
 import SehpaathiBot from "./Chatbot";
 
-const BACKEND_URL = "https://riseup-production.up.railway.app";
+const BACKEND_URL = "https://riseup-pwmj.onrender.com";
 
 // Interview card data - now used for sidebar navigation
 const navItems = [

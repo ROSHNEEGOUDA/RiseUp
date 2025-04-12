@@ -21,7 +21,7 @@ import {
   XMarkIcon
 } from '@heroicons/react/24/outline';
 
-const BACKEND_URL = "https://riseup-production.up.railway.app";
+const BACKEND_URL = "https://riseup-pwmj.onrender.com";
 
 const UserProfile = () => {
   const [user, setUser] = useState({});
